@@ -1,0 +1,40 @@
+.search {
+  flex: 1;
+  max-width: 500px;
+  height: 38px;
+  background: #fff;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px 0 24px;
+}
+
+.search:focus-within {
+  box-shadow: 0 0 0 2px #f6d6d6;
+}
+
+.search input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: 500 20px "Montserrat", sans-serif;
+  color: #333;
+}
+
+.search input::placeholder { color: #b7b7b7; }
+
+.search-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #111;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.search-btn:hover { background: #f5efe2; }

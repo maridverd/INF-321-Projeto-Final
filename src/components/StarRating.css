@@ -1,0 +1,32 @@
+.stars {
+  display: inline-flex;
+  gap: 4px;
+  border-radius: 8px;
+}
+
+.stars:not(.readonly) { cursor: pointer; }
+
+.stars:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 4px;
+}
+
+.star {
+  position: relative;
+  display: inline-block;
+}
+
+.star-empty,
+.star-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.star-empty { width: 100%; }
+
+.star-empty svg { fill: #ead9b2; }
+.star-fill svg  { fill: var(--pink); }

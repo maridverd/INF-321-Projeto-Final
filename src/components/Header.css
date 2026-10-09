@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-right: 20px;
+  margin-bottom: 8px;
+}
+
+.logo-slot {
+  width: 170px;
+  height: 36px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.logo-slot img { width: 100%; height: 100%; object-fit: contain; }
+
+.user {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ddd;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.user-name {
+  font-weight: 600;
+  font-size: 19px;
+  margin-right: 10px;
+  white-space: nowrap;
+}
+
+.bell {
+  position: relative;
+  border: none;
+  background: none;
+  color: #111;
+  cursor: pointer;
+  display: grid;
+}
+
+.bell-dot {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--pink);
+}

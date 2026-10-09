@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Roboto:wght@400;500&display=swap");
+
+:root {
+  --bg: #fdf3dc;
+  --sidebar: #fcefd2;
+  --pink: #e98b8f;
+  --pink-dark: #d9747a;
+  --pink-light: #f6d6d6;
+  --text: #111;
+  --muted: #8a8a8a;
+  --card: #fff;
+  --border: #ecdcb8;
+  --danger: #c94a4a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Reserva o espaço da barra de rolagem. Sem isso, quando o modal trava a
+   rolagem (overflow: hidden), a barra some e a página inteira pula para o lado. */
+html { scrollbar-gutter: stable; }
+
+body {
+  background: var(--bg);
+  font-family: "Montserrat", sans-serif;
+  color: var(--text);
+}
+
+/* ---------- Botões reutilizáveis ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: none;
+  font: 600 14px "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
+
+.btn-primary {
+  background: var(--pink);
+  color: #fff;
+}
+
+.btn-primary:not(:disabled):hover { background: var(--pink-dark); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-ghost:not(:disabled):hover { background: #f6e3bd; }
+
+.btn-soft {
+  background: var(--pink-light);
+  color: var(--text);
+}
+
+.btn-soft:not(:disabled):hover { background: #f1c4c4; }

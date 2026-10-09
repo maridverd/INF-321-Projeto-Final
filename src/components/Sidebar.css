@@ -1,0 +1,36 @@
+.sidebar {
+  width: 60px;
+  flex-shrink: 0;
+  background: #fcefd2;
+  border-right: 1px solid #f0e2c2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-btn {
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: #222;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.sidebar-btn:not(.active):hover {
+  background: #f6e3bd;
+}
+
+.sidebar-btn.active {
+  background: #e98b8f;
+  color: #fff;
+}

@@ -1,0 +1,12 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+  overflow-x: clip; /* nada dentro do conteúdo gera rolagem lateral na página */
+  padding: 24px 0 24px 20px;
+}
