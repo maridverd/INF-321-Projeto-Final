@@ -58,3 +58,37 @@
   border-radius: 50%;
   background: var(--pink);
 }
+
+/* ==========  Responsividade — tablet: até 1024px · celular: até 640px  ========== */
+@media (max-width: 1024px) {
+  .header {
+    gap: 16px;
+    padding-right: 16px;
+  }
+
+  .logo-slot { width: 140px; height: 30px; }
+
+  /* só a foto já identifica o usuário; o nome disputava espaço com a busca */
+  .user-name { display: none; }
+}
+
+@media (max-width: 640px) {
+  /* linha 1: logo + foto + sino · linha 2: busca na largura toda */
+  .header {
+    flex-wrap: wrap;
+    row-gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .logo-slot { width: 120px; height: 26px; }
+
+  .header .search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+  }
+
+  .user { gap: 10px; }
+
+  .avatar { width: 34px; height: 34px; }
+}

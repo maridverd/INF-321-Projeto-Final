@@ -40,15 +40,21 @@ export default function BookModal({ livro, avaliacao, onAvaliar, onClose }) {
   // Ao abrir: trava a rolagem da página, foca o modal e fecha com Esc
   useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onCloseRef.current();
-    const overflowAnterior = document.body.style.overflow;
+    const { overflow, paddingRight } = document.body.style;
+
+    // Ao travar a rolagem a barra some e a página pularia para o lado;
+    // compensamos com um padding do mesmo tamanho da barra (0 no celular).
+    const larguraBarra = window.innerWidth - document.documentElement.clientWidth;
 
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
+    if (larguraBarra > 0) document.body.style.paddingRight = `${larguraBarra}px`;
     dialogRef.current?.focus();
 
     return () => {
       document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = overflowAnterior;
+      document.body.style.overflow = overflow;
+      document.body.style.paddingRight = paddingRight;
     };
   }, []);
 

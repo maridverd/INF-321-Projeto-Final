@@ -226,18 +226,48 @@
 @keyframes fade-in { from { opacity: 0; } }
 @keyframes pop-in  { from { opacity: 0; transform: translateY(8px) scale(0.98); } }
 
-@media (prefers-reduced-motion: reduce) {
-  .modal-overlay, .modal { animation: none; }
-}
 
-/* ---------- Telas estreitas ---------- */
-@media (max-width: 640px) {
+/* ==========  Responsividade — tablet: até 1024px · celular: até 640px  ========== */
+@media (max-width: 1024px) {
   .modal {
-    grid-template-columns: 1fr;
-    padding: 24px 20px;
-    gap: 20px;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    padding: 28px;
   }
 
-  .modal-cover { width: 140px; }
+  .modal-cover { width: 180px; }
+  .modal-title { font-size: 23px; }
+}
+
+@media (max-width: 640px) {
+  /* vira uma "folha" que sobe da parte de baixo da tela */
+  .modal-overlay {
+    place-items: end stretch;
+    padding: 0;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 92dvh;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px 20px calc(24px + env(safe-area-inset-bottom));
+    border-radius: 22px 22px 0 0;
+    animation-name: slide-up;
+  }
+
+  .modal-cover { width: 110px; }
   .modal-body  { padding-right: 0; }
+  .modal-title { font-size: 21px; padding-right: 32px; }
+
+  .modal-actions .btn { flex: 1; }
+
+  .review-field textarea { font-size: 16px; } /* evita o zoom no iPhone */
+}
+
+@keyframes slide-up { from { transform: translateY(100%); } }
+
+/* fica por último para valer também sobre a animação do celular */
+@media (prefers-reduced-motion: reduce) {
+  .modal-overlay, .modal { animation: none; }
 }

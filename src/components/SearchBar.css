@@ -38,3 +38,18 @@
 }
 
 .search-btn:hover { background: #f5efe2; }
+
+/* ==========  Responsividade — tablet: até 1024px · celular: até 640px  ========== */
+@media (max-width: 1024px) {
+  .search input { font-size: 17px; }
+}
+
+@media (max-width: 640px) {
+  .search {
+    height: 42px;
+    padding-left: 18px;
+  }
+
+  /* 16px é o mínimo para o iPhone não dar zoom ao focar o campo */
+  .search input { font-size: 16px; }
+}

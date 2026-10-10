@@ -10,3 +10,17 @@
   overflow-x: clip; /* nada dentro do conteúdo gera rolagem lateral na página */
   padding: 24px 0 24px 20px;
 }
+
+/* ==========  Responsividade — tablet: até 1024px · celular: até 640px  ========== */
+@media (max-width: 1024px) {
+  .content { padding: 20px 0 24px 16px; }
+}
+
+@media (max-width: 640px) {
+  /* a sidebar vira barra fixa embaixo, então o conteúdo ocupa a largura toda */
+  .page { display: block; }
+
+  .content {
+    padding: 16px 0 calc(88px + env(safe-area-inset-bottom)) 16px;
+  }
+}
