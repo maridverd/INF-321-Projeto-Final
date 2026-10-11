@@ -36,7 +36,7 @@ const IconSettings = () => (
  * Amigos ainda não tem tela, então fica sem rota por enquanto.
  */
 const itens = [
-  { to: "/", end: true, label: "Início", Icon: IconHome },
+  { to: "/home", end: true, label: "Início", Icon: IconHome },
   { to: "/perfil", label: "Perfil", Icon: IconUser },
   { to: null, label: "Amigos", Icon: IconUsers },
   { to: "/configuracoes", label: "Configurações", Icon: IconSettings },

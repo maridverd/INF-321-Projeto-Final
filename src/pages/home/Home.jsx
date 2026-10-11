@@ -1,7 +1,7 @@
 import { useState } from "react";
-import BookModal from "../components/BookModal.jsx";
-import { useUser } from "../context/UserContext.jsx";
-import { lendoAgora, recomendados } from "../data/livros.js";
+import BookModal from "../../components/BookModal.jsx";
+import { useUser } from "../../context/UserContext.jsx";
+import { lendoAgora, recomendados } from "../../data/livros.js";
 import "./Home.css";
 
 function BookCard({ livro, onSelect }) {

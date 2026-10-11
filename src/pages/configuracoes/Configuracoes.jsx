@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import { useUser } from "../context/UserContext.jsx";
-import avatarPadrao from "../assets/avatar.svg";
+import { useUser } from "../../context/UserContext";
+import avatarPadrao from "../../assets/avatar.svg";
 import "./Configuracoes.css";
 
 const LIMITE_BIO = 160;

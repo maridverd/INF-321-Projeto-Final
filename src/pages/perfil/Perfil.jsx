@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import BookModal from "../components/BookModal.jsx";
-import StarRating, { formatarNota } from "../components/StarRating.jsx";
-import { useUser } from "../context/UserContext.jsx";
-import { lendoAgora, recomendados } from "../data/livros.js";
-import avatarPadrao from "../assets/avatar.svg";
-import "./Home.css"; // reaproveita .shelf, .shelf-row e .book-card
+import BookModal from "../../components/BookModal.jsx";
+import StarRating, { formatarNota } from "../../components/StarRating.jsx";
+import { useUser } from "../../context/UserContext.jsx";
+import { lendoAgora, recomendados } from "../../data/livros.js";
+import avatarPadrao from "../../assets/avatar.svg";
+import "../home/Home.css"; // reaproveita .shelf, .shelf-row e .book-card
 import "./Perfil.css";
 
 /* Provisório, até existirem em data/livros.js (mesmo formato de lendoAgora).

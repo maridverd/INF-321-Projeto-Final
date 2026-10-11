@@ -1,0 +1,33 @@
+.login__panel--wide { 
+    width: min(720px, 100% - 48px); 
+}
+
+.cadastro .login__logo {
+  display: block;
+  max-width: 75%;
+  margin: 0 auto 32px;
+}
+.cadastro .login__title { 
+    font-size: 2.25rem; 
+}
+.cadastro .login__subtitle { 
+    font-size: 1.25rem; 
+    margin: 8px 0 28px; 
+    text-align: left; 
+}
+
+/* duas colunas; vira uma só quando o espaço fica curto */
+.cadastro__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  column-gap: 24px;
+}
+
+/* garante o mesmo espaçamento em todos os campos */
+.login .cadastro__grid .ant-form-item { 
+    margin-bottom: 22px; 
+}
+
+.cadastro .login__actions { 
+    margin-top: 8px; 
+}

@@ -1,10 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import BookModal from "../components/BookModal.jsx";
-import { useUser } from "../context/UserContext.jsx";
-import { lendoAgora, recomendados } from "../data/livros.js";
-import { lerRecentes, limparRecentes, salvarRecente } from "../utils/buscasRecentes.js";
-import "./Home.css"; // reaproveita .shelf, .shelf-row e .book-card
+import BookModal from "../../components/BookModal.jsx";
+import { useUser } from "../../context/UserContext.jsx";
+import { lendoAgora, recomendados } from "../../data/livros.js";
+import { lerRecentes, limparRecentes, salvarRecente } from "../../utils/buscasRecentes.js";
+import "../home/Home.css"; // reaproveita .shelf, .shelf-row e .book-card
 import "./Pesquisa.css";
 
 /* Provisório: quando existir um catálogo completo em data/livros.js, importe de lá.
