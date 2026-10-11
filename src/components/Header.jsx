@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import SearchBar from "./SearchBar.jsx";
 import { useUser } from "../context/UserContext.jsx";
+import { salvarRecente } from "../utils/buscasRecentes.js";
 import logo from "../assets/wormbox.svg";
 import avatarPadrao from "../assets/avatar.svg";
 import "./Header.css";
@@ -14,6 +15,20 @@ const IconBell = () => (
 
 export default function Header({ notificacoes = 0 }) {
   const { usuario } = useUser();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
+  const [params] = useSearchParams();
+
+  const naPesquisa = pathname === "/pesquisa";
+  const consulta = naPesquisa ? params.get("q") ?? "" : "";
+
+  const irParaPesquisa = (texto) => {
+    const p = new URLSearchParams(naPesquisa ? params : undefined);
+    if (texto) p.set("q", texto);
+    else p.delete("q");
+    const search = p.toString();
+    navigate({ pathname: "/pesquisa", search: search ? `?${search}` : "" }, { replace: naPesquisa });
+  };
 
   return (
     <header className="header">
@@ -21,7 +36,12 @@ export default function Header({ notificacoes = 0 }) {
         <img src={logo} alt="wormboxd" />
       </Link>
 
-      <SearchBar onSearch={(busca) => console.log("buscar:", busca)} />
+      <SearchBar
+        value={consulta}
+        onAbrir={() => { if (!naPesquisa) navigate("/pesquisa"); }}
+        onChange={irParaPesquisa}
+        onSearch={(busca) => { salvarRecente(busca); irParaPesquisa(busca); }}
+      />
 
       <div className="user">
         <div className="avatar"><img src={usuario.foto || avatarPadrao} alt={usuario.nome} /></div>

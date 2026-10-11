@@ -1,6 +1,8 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Layout from './components/Layout.jsx'
 import Home from './pages/Home.jsx'
+import Perfil from "./pages/Perfil.jsx";
+import Pesquisa from "./pages/Pesquisa.jsx";
 import Configuracoes from './pages/Configuracoes.jsx'
 
 function App() {
@@ -10,6 +12,8 @@ function App() {
       <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
+        <Route path="/perfil" element={<Perfil />} />
+        <Route path="/pesquisa" element={<Pesquisa />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

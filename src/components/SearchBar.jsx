@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./SearchBar.css";
 
 const IconSearch = () => (
@@ -11,10 +11,22 @@ const IconSearch = () => (
 /**
  * Barra de pesquisa.
  * @param {string}   placeholder
- * @param {function} onSearch  chamada com o texto digitado ao apertar Enter ou clicar na lupa
+ * @param {string}   value     (opcional) texto vindo de fora, ex.: da URL da tela de pesquisa
+ * @param {function} onChange  chamada a cada letra digitada, com o texto
+ * @param {function} onSearch  chamada com o texto ao apertar Enter ou clicar na lupa
+ * @param {function} onAbrir   chamada quando a pessoa clica no campo
  */
-export default function SearchBar({ placeholder = "Pesquisar...", onSearch }) {
-  const [texto, setTexto] = useState("");
+export default function SearchBar({ placeholder = "Pesquisar...", value, onChange, onSearch, onAbrir }) {
+  const [texto, setTexto] = useState(value ?? "");
+
+  useEffect(() => {
+    if (value !== undefined) setTexto(value);
+  }, [value]);
+
+  const alterar = (e) => {
+    setTexto(e.target.value);
+    onChange?.(e.target.value);
+  };
 
   const enviar = (e) => {
     e.preventDefault();
@@ -27,9 +39,11 @@ export default function SearchBar({ placeholder = "Pesquisar...", onSearch }) {
       <input
         type="text"
         value={texto}
-        onChange={(e) => setTexto(e.target.value)}
+        onChange={alterar}
+        onClick={onAbrir}
         placeholder={placeholder}
         aria-label="Pesquisar"
+        autoComplete="off"
       />
       <button type="submit" className="search-btn" aria-label="Buscar">
         <IconSearch />

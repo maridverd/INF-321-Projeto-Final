@@ -8,6 +8,13 @@ const IconHome = () => (
   </svg>
 );
 
+const IconUser = () => (
+  <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4 21c.9-4 4-6.5 8-6.5s7.1 2.5 8 6.5" />
+  </svg>
+);
+
 const IconUsers = () => (
   <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round">
     <circle cx="10" cy="8" r="4" />
@@ -30,6 +37,7 @@ const IconSettings = () => (
  */
 const itens = [
   { to: "/", end: true, label: "Início", Icon: IconHome },
+  { to: "/perfil", label: "Perfil", Icon: IconUser },
   { to: null, label: "Amigos", Icon: IconUsers },
   { to: "/configuracoes", label: "Configurações", Icon: IconSettings },
 ];
