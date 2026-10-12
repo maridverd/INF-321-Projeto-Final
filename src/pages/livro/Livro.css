@@ -1,0 +1,334 @@
+.livro-page {
+  max-width: 980px;
+  padding: 16px 20px 40px 0;
+}
+
+/* ---------- Cartão do livro ---------- */
+.livro-card {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 36px;
+}
+
+.livro-capa {
+  width: 220px;
+  aspect-ratio: 176 / 235;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #e7dcc3; /* placeholder até inserir a capa */
+  overflow: hidden;
+}
+
+.livro-capa img { width: 100%; height: 100%; object-fit: cover; }
+
+.livro-main {
+  flex: 1;
+  min-width: 0;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+}
+
+.livro-titulo {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.livro-autor {
+  margin-top: 6px;
+  font: 400 15px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+.livro-autor a {
+  color: var(--pink-dark);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.livro-autor a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.livro-autor a:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Gêneros ---------- */
+.livro-generos {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.livro-genero {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--pink-light);
+  font: 500 12px "Roboto", sans-serif;
+  color: #333;
+}
+
+/* ---------- Nota ---------- */
+.livro-nota {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.livro-nota strong {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.livro-nota-total {
+  font: 400 13px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+/* ---------- Páginas, ano, avaliações ---------- */
+.livro-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 36px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #f1e6cc;
+}
+
+.livro-meta > div { display: flex; flex-direction: column-reverse; gap: 2px; }
+
+.livro-meta dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.livro-meta dt {
+  font: 400 12px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+.livro-acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.livro-acoes a.btn { text-decoration: none; }
+
+/* ---------- Sinopse ---------- */
+.livro-sinopse {
+  max-width: 70ch;
+  font: 400 15px/1.7 "Roboto", sans-serif;
+  color: #333;
+}
+
+.livro-sinopse.vazia { color: var(--muted); font-style: italic; }
+
+/* ---------- Resumo das avaliações ---------- */
+.livro-resumo {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  gap: 32px;
+  align-items: center;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 22px 28px;
+  margin-bottom: 18px;
+}
+
+.livro-resumo-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.livro-resumo-numero {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.livro-dist {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.livro-dist-linha {
+  display: grid;
+  grid-template-columns: 32px 1fr 36px;
+  align-items: center;
+  gap: 12px;
+  font: 500 13px "Roboto", sans-serif;
+}
+
+.livro-dist-rotulo { color: #333; }
+
+.livro-dist-barra {
+  height: 8px;
+  border-radius: 999px;
+  background: #f1e6cc;
+  overflow: hidden;
+}
+
+.livro-dist-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--pink);
+}
+
+.livro-dist-qtd {
+  text-align: right;
+  color: var(--muted);
+}
+
+/* ---------- Resenhas ---------- */
+.livro-resenhas {
+  list-style: none;
+  display: grid;
+  gap: 14px;
+}
+
+.livro-resenha {
+  display: flex;
+  gap: 14px;
+  background: var(--card);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.livro-resenha-avatar {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--pink-light);
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.livro-resenha-corpo { flex: 1; min-width: 0; }
+
+.livro-resenha-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.livro-resenha-nome {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font: 500 15px "Roboto", sans-serif;
+  color: #222;
+}
+
+.livro-resenha-voce {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--pink);
+  color: #fff;
+  font: 600 11px "Montserrat", sans-serif;
+}
+
+.livro-resenha-nota {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  font: 500 13px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+.livro-resenha-texto {
+  margin-top: 8px;
+  font: 400 14px/1.55 "Roboto", sans-serif;
+  color: #333;
+}
+
+.livro-resenha-data {
+  margin-top: 8px;
+  font: 400 12px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+/* ---------- Estado vazio ---------- */
+.livro-vazio {
+  padding: 22px 24px;
+  border: 1.5px dashed var(--border);
+  border-radius: 14px;
+  font: 400 14px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+.livro-vazio a { color: var(--pink-dark); font-weight: 500; }
+
+/* ==========  Responsividade — tablet: até 1024px · celular: até 640px  ========== */
+@media (max-width: 1024px) {
+  .livro-page { padding-right: 16px; }
+  .livro-card { gap: 24px; padding: 24px; }
+  .livro-capa { width: 180px; }
+  .livro-titulo { font-size: 24px; }
+}
+
+@media (max-width: 640px) {
+  .livro-page { padding-top: 4px; }
+
+  .livro-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 22px 18px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+
+  .livro-capa { width: 140px; }
+  .livro-main { width: 100%; align-items: center; }
+  .livro-titulo { font-size: 21px; }
+  .livro-generos, .livro-nota { justify-content: center; }
+
+  .livro-meta {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    text-align: center;
+  }
+
+  .livro-meta > div { align-items: center; }
+  .livro-meta dd { font-size: 19px; }
+
+  .livro-acoes { width: 100%; }
+  .livro-acoes .btn { flex: 1; }
+
+  .livro-sinopse { text-align: left; }
+
+  .livro-resumo {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 18px;
+  }
+
+  .livro-resenha { padding: 14px; gap: 12px; }
+  .livro-resenha-topo { flex-direction: column; align-items: flex-start; gap: 4px; }
+}

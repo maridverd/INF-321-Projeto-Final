@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import { Link } from "react-router-dom";
+import { sinopseDe } from "../data/detalhesLivros.js";
 import StarRating, { formatarNota } from "./StarRating.jsx";
 import "./BookModal.css";
 
@@ -26,9 +28,12 @@ const IconBack = () => (
  * @param {object}   avaliacao  avaliação já feita pelo usuário (ou undefined)
  * @param {function} onAvaliar  recebe { nota, resenha, data }
  * @param {function} onClose
+ * @param {string}   modoInicial  "detalhes" (padrão) ou "avaliar" para abrir direto na avaliação
+ * @param {boolean}  linkPagina   mostra o link para a página do livro (padrão: true)
  */
-export default function BookModal({ livro, avaliacao, onAvaliar, onClose }) {
-  const [modo, setModo] = useState("detalhes");
+export default function BookModal({ livro, avaliacao, onAvaliar, onClose, modoInicial = "detalhes", linkPagina = true }) {
+  const [modo, setModo] = useState(modoInicial);
+  const sinopse = sinopseDe(livro);
   const [nota, setNota] = useState(avaliacao?.nota ?? 0);
   const [resenha, setResenha] = useState(avaliacao?.resenha ?? "");
   const dialogRef = useRef(null);
@@ -97,9 +102,15 @@ export default function BookModal({ livro, avaliacao, onAvaliar, onClose }) {
               <hr className="modal-divider" />
 
               <h3 className="modal-label">Sinopse</h3>
-              <p className={`modal-synopsis${livro.sinopse ? "" : " empty"}`}>
-                {livro.sinopse || "Sinopse ainda não cadastrada."}
+              <p className={`modal-synopsis${sinopse ? "" : " empty"}`}>
+                {sinopse || "Sinopse ainda não cadastrada."}
               </p>
+
+              {linkPagina && (
+                <Link to={`/livro/${livro.id}`} className="link-btn modal-page-link" onClick={onClose}>
+                  Ver página do livro
+                </Link>
+              )}
 
               {avaliacao && (
                 <div className="my-review">

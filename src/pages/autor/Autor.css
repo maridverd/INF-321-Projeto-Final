@@ -1,0 +1,171 @@
+.autor-page {
+  max-width: 980px;
+  padding: 16px 20px 40px 0;
+}
+
+/* ---------- Cartão do autor ---------- */
+.autor-card {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  background: var(--card);
+  border-radius: 20px;
+  padding: 28px 32px;
+  margin-bottom: 36px;
+}
+
+.autor-foto {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #ddd;
+}
+
+.autor-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+.autor-main { flex: 1; min-width: 0; }
+
+.autor-nome {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.autor-ocupacao {
+  margin-top: 4px;
+  font: 400 14px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+/* ---------- Nascimento, local, falecimento ---------- */
+.autor-fatos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  margin-top: 18px;
+}
+
+.autor-fato { display: flex; flex-direction: column; gap: 2px; }
+
+.autor-fato dt {
+  font: 700 11px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.autor-fato dd {
+  margin: 0;
+  font: 400 14px "Roboto", sans-serif;
+  color: #222;
+}
+
+.autor-bio {
+  margin-top: 18px;
+  max-width: 64ch;
+  font: 400 15px/1.65 "Roboto", sans-serif;
+  color: #222;
+}
+
+/* ---------- Estatísticas ---------- */
+.autor-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 36px;
+  margin-top: 22px;
+  padding-top: 20px;
+  border-top: 1px solid #f1e6cc;
+}
+
+.autor-stat { display: flex; flex-direction: column-reverse; gap: 2px; }
+
+.autor-stat dd {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.autor-stat dt {
+  font: 400 12px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+/* ---------- Outras obras ---------- */
+.autor-obras {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.autor-obra {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 14px 16px;
+  background: var(--card);
+  border-radius: 12px;
+}
+
+.autor-obra-titulo {
+  font: 500 14px "Roboto", sans-serif;
+  color: #222;
+}
+
+.autor-obra-ano {
+  flex-shrink: 0;
+  font: 400 12px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+/* ---------- Estado vazio ---------- */
+.autor-vazio {
+  padding: 22px 24px;
+  border: 1.5px dashed var(--border);
+  border-radius: 14px;
+  font: 400 14px "Roboto", sans-serif;
+  color: var(--muted);
+}
+
+.autor-vazio a { color: var(--pink-dark); font-weight: 500; }
+
+/* ==========  Responsividade — tablet: até 1024px · celular: até 640px  ========== */
+@media (max-width: 1024px) {
+  .autor-page { padding-right: 16px; }
+  .autor-foto { width: 128px; height: 128px; }
+}
+
+@media (max-width: 640px) {
+  .autor-page { padding-top: 4px; }
+
+  .autor-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 22px 18px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+  }
+
+  .autor-foto { width: 104px; height: 104px; }
+  .autor-main { width: 100%; }
+  .autor-nome { font-size: 22px; }
+
+  .autor-fatos { justify-content: center; }
+  .autor-bio { margin-inline: auto; text-align: left; }
+
+  .autor-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    text-align: center;
+  }
+
+  .autor-stat { align-items: center; }
+  .autor-stat dd { font-size: 19px; }
+
+  .autor-obras { grid-template-columns: 1fr; }
+}

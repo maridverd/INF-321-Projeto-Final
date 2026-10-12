@@ -120,6 +120,13 @@
 
 .link-btn:hover { color: var(--pink-dark); }
 
+/* "Ver página do livro", logo abaixo da sinopse */
+.modal-page-link {
+  align-self: flex-start;
+  margin-top: 14px;
+  padding: 0;
+}
+
 .link-btn:focus-visible {
   outline: 2px solid var(--pink);
   outline-offset: 3px;

@@ -6,6 +6,8 @@ import Perfil from "./pages/perfil/Perfil.jsx";
 import Pesquisa from "./pages/pesquisa/Pesquisa.jsx";
 import Configuracoes from './pages/configuracoes/Configuracoes.jsx'
 import Cadastro from './pages/cadastro/Cadastro.jsx';
+import Livro from './pages/livro/Livro.jsx';
+import Autor from './pages/autor/Autor.jsx';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/pesquisa" element={<Pesquisa />} />
+        <Route path="/livro/:id" element={<Livro />} />
+        <Route path="/autor/:id" element={<Autor />} />
       </Route>
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

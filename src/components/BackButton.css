@@ -1,0 +1,21 @@
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+  padding: 6px 14px 6px 8px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text);
+  font: 600 14px "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.back-btn:hover { background: #f6e3bd; }
+
+.back-btn:focus-visible {
+  outline: 2px solid var(--pink);
+  outline-offset: 3px;
+}
